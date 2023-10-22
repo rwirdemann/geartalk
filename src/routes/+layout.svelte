@@ -11,6 +11,6 @@ import Header from "./Header.svelte";
 
     <footer>
         <hr>
-        <p>Wingfoil News powered by wingbuddies.de 2023</p>
+        <p>Wingfoil Gear Talk powered by wingbuddies.de 2023</p>
     </footer>
 </div>
