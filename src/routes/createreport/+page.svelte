@@ -1,9 +1,41 @@
-<form class="container-md">
+<script>
+    let selection = {
+        brand: 'Gong',
+        component: 'Board',
+        model: 'Lemon',
+        year: '2023',
+        size: '4\'9"'
+    }
+
+    let onChangeAgeRange = 0
+
+    const onChange = () => {
+
+    }
+</script>
+<form class="container">
     <div class="row">
         <div class="col">
             <div class="mb-3">
-                <label class="form-label">Report über</label>
-                <select class="form-select">
+                <label class="form-label">Hersteller</label>
+                <div class="input-group">
+                    <select bind:value={selection.brand} class="form-select">
+                        <option>Fanatic</option>
+                        <option>Gong</option>
+                        <option>Appletree</option>
+                        <option>Vayu</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                        Neu...
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label class="form-label">Komponente</label>
+                <select bind:value={selection.component} class="form-select">
                     <option>Board</option>
                     <option>Wing</option>
                     <option>Mast</option>
@@ -12,24 +44,52 @@
                 </select>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col">
             <div class="mb-3">
-                <label class="form-label">Hersteller</label>
+                <label class="form-label">Modell</label>
                 <div class="input-group">
-                    <select class="form-select">
-                        <option>Fanatic</option>
-                        <option>Gong</option>
-                        <option>Appletree</option>
-                        <option>Vayu</option>
+                    <select bind:value={selection.model} class="form-select">
+                        <option>Sky Style SLS</option>
+                        <option>Lemon</option>
                     </select>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
                         Neu...
                     </button>
                 </div>
             </div>
         </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">Jahr</label>
+                <select bind:value={selection.year} class="form-select">
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
+                <label class="form-label">Größe</label>
+                <div class="input-group">
+                    <select bind:value={selection.size} class="form-select">
+                        <option>4'9"</option>
+                        <option>5'1"</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                        Neu...
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="mb-3">
-            <label for="description" class="form-label">Dein Bericht</label>
+            <label for="description" class="form-label">Dein Bericht: {selection.brand} => {selection.component} => {selection.model} => {selection.year} => {selection.size}
+            </label>
             <textarea class="form-control" id="description" rows="5"></textarea>
         </div>
     </div>
